@@ -28,8 +28,7 @@ jobs:
       run: docker login registry.aquasec.com -u ${{ secrets.AQUA_USER }} --password ${{ secrets.AQUA_PASSWORD }}
       
     - name: Scan Image with Aqua scanner
-      run: docker run -d  registry.aquasec.com/scanner:2403.2.15 daemon --token 4e26cccc-3abf-4594-8b1d-26cebb75eb2c --host https://dfa4444f89-d.cloud.aquasec.com
-
+      run: docker run -d  registry.aquasec.com/scanner:2403.2.15 daemon --token 6f4a65ca077cdbca787229aac69a229e73e089db --host https://dfa4444f89-d.cloud.aquasec.com
 
     - name: Push to Registry
       run: echo "docker push my-registry/my-demo-image:${{ github.sha }}"
