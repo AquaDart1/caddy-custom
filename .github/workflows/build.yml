@@ -25,7 +25,7 @@ jobs:
 
 
     - name: Login to aquasec registy
-      run: docker login registry.aquasec.com 
+      run: docker login registry.aquasec.com -u ${{ secrets.AQUA_USER }} --password ${{ secrets.AQUA_PASSWORD }}
       
     - name: Scan Image with Aqua scanner
       run: docker run -d  registry.aquasec.com/scanner:2403.2.15 daemon --token 4e26cccc-3abf-4594-8b1d-26cebb75eb2c --host https://dfa4444f89-d.cloud.aquasec.com
