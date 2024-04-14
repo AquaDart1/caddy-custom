@@ -5,18 +5,13 @@ on:
     branches: [ "main","Branch1" ]
   pull_request:
     branches: [ "main","Branch1" ]
-  
-env:
-  IMAGE_NAME: caddy_custom
- 
+
 
 jobs:
 
   build:
 
    jobs:
-
-  build:
 
     runs-on: ubuntu-latest
 
