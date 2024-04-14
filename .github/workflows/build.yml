@@ -50,4 +50,3 @@ jobs:
     - name: Scan Image with Aqua scanner
       run: docker run -d  registry.aquasec.com/scanner:2403.2.15 daemon --token 6f4a65ca077cdbca787229aac69a229e73e089db --host https://dfa4444f89-d.cloud.aquasec.com
 
-    - name: Push to Registry
