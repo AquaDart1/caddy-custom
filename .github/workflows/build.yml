@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Download Aqua Scanner Binary
-      run: wget https://download.aquasec.com/scanner/2022.4/scannercli -u yair@terasky.com 
+      run: wget https://download.aquasec.com/scanner/2022.4/scannercli -u ${{ secrets.AQUA_USER }} --password ${{ secrets.AQUA_PASSWORD }}
       
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-demo-image:${{ github.sha }}
