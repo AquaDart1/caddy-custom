@@ -18,8 +18,10 @@ jobs:
 
     - name: Download Aqua Scanner Binary
       run: wget https://download.aquasec.com/scanner/2022.4/scannercli --user=${{ secrets.AQUA_USER }} --password=${{ secrets.AQUA_PASSWORD }} |
-            chmod +x scannercli
-      
+
+    - name: Change Scannercli permissions:
+      run:  chmod +x scannercli
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-demo-image:${{ github.sha }}
 
