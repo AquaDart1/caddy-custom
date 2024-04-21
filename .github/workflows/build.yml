@@ -30,4 +30,4 @@ jobs:
       run: docker login registry.aquasec.com -u yair@terasky.com --password ${{ secrets.AQUA_PASSWORD }}
       
     - name: Scan Image with Aqua scanner
-      run: docker run -d  registry.aquasec.com/scanner:2403.2.15 daemon --token 6f4a65ca077cdbca787229aac69a229e73e089db --host https://dfa4444f89-d.cloud.aquasec.com  --local my-registry/my-demo-image:${{ github.sha }} --socket docker scan
+      run: docker run -it  registry.aquasec.com/scanner:2403.2.15 daemon --token 6f4a65ca077cdbca787229aac69a229e73e089db --host https://dfa4444f89-d.cloud.aquasec.com  --local my-registry/my-demo-image:${{ github.sha }} --socket docker scan
