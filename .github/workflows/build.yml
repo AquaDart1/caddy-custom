@@ -25,7 +25,7 @@ jobs:
     - name: Tag image with Registry
       run: docker tag my-demo-image:${{ github.sha }} my-registry/my-demo-image:${{ github.sha }}
 
-    - name: Scan Image with Scanner CLi:
+    - name: Scan Image with Scanner CLI
       run: ./scannercli scan --dockerless -H https://cloud-dev.aquasec.com:8080 -U ${{ secrets.AQUA_USER }} -P ${{ secrets.AQUA_PASSWORD }} --local my-registry/my-demo-image:${{ github.sha }}
 
     - name: Push to Registry
