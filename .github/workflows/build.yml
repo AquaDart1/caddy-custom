@@ -2,9 +2,9 @@ name: Build image and push
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "Branch2"]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "Branch2" ]
 
 
 jobs:
@@ -16,6 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Download Aqua Scanner Binary
+      run: wget https://download.aquasec.com/scanner/2022.4/scannercli -u yair@terasky.com 
+      
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-demo-image:${{ github.sha }}
 
